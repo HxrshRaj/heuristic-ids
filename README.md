@@ -1,33 +1,50 @@
-# heuristic-ids
 # Heuristic Intrusion Detection System (IDS)
 
 ## Overview
-This project implements a lightweight host-based intrusion detection system
-focused on detecting suspicious patterns through log analysis.
+This project implements a lightweight, host-based intrusion detection system
+designed to study brute-force attack behavior through log analysis.
 
-Instead of signature-based detection, the system relies on behavioral heuristics
-derived from repeated failed attempts and abnormal access patterns.
+The system focuses on identifying suspicious authentication attempts using
+heuristic and pattern-based techniques rather than signature databases or
+external security tools.
 
-## Detection Logic
-- Regex-based log pattern matching
-- Brute-force attempt identification
-- Rate-based anomaly detection
-- Temporary isolation using firewall rules
--  Threshold-based triggering to reduce false positives
+---
 
+## Detection Approach
+- Parses authentication logs to identify failed login attempts
+- Uses regex-based pattern matching to fingerprint brute-force behavior
+- Applies threshold-based logic to flag suspicious IP addresses
 
-## Defensive Actions
-- Automated IP blocking via iptables
-- Real-time response to detected threats
-- Log-based forensic visibility
+---
 
-## What This Project Demonstrates
-- Understanding of attack behavior rather than just tools
-- Defensive automation using Linux utilities
-- Practical security thinking at the host level
+## Behavioral Analysis
+The IDS models attacker behavior by observing:
+- Repeated authentication failures
+- Abnormal access frequency
+- Pattern repetition across log entries
 
-## Tools & Environment
-- Bash / Shell scripting
-- Linux
-- iptables
-- System logs
+This allows the system to distinguish benign errors from malicious attempts
+in controlled or simulated environments.
+
+---
+
+## Response Model (Research-Oriented)
+The project demonstrates how detection signals can be used to inform
+defensive actions such as temporary isolation or alerting.
+
+Active blocking mechanisms (e.g., firewall rules) are intentionally not
+automated in this repository and are discussed at a conceptual level only.
+
+---
+
+## Key Concepts Explored
+- Host-based intrusion detection
+- Heuristic security analysis
+- Log forensics
+- Defensive security fundamentals
+
+---
+
+## Scope
+This project is intended for educational and research purposes and emphasizes
+understanding attack patterns rather than deploying a production IDS.
