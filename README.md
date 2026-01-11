@@ -13,6 +13,8 @@ derived from repeated failed attempts and abnormal access patterns.
 - Brute-force attempt identification
 - Rate-based anomaly detection
 - Temporary isolation using firewall rules
+-  Threshold-based triggering to reduce false positives
+
 
 ## Defensive Actions
 - Automated IP blocking via iptables
